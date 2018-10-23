@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'start.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'start',
+        'USER': 'start',
+        'PASSWORD': 'emiYPeMfbz8rwee5',
+        'HOST': '47.100.29.122',
+        'PORT': '4055'
     }
 }
 
@@ -116,3 +120,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/static/'
+
+# 添加了静态文件的路径
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]

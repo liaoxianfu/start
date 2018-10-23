@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from message.views import get_form
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path(r'^form/$',get_form),  # django2.0 废除了正则路由
+    path(r'form/',get_form),
 ]
